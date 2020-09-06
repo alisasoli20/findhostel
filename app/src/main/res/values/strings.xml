@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">findhostel</string>
+    <string name="facebook_icon">Facebook</string>
+    <string name="google_icon">Google</string>
+    <string name="top_icon">topicon</string>
+    <string name="new_user_register_now">NEW USER? REGISTER NOW</string>
+    <string name="or">or</string>
+    <string name="forgot_password">FORGET PASSWORD?</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="register">REGISTER</string>
+    <string name="fullname">Full Name</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="hostelName">Hostel Name</string>
+    <string name="addresss">Address</string>
+    <string name="rent_per_person">Rent Per Person(Monthly)PKR</string>
+    <string name="addHostel">ADD HOSTEL</string>
+    <string name="number_of_rooms">Number of Rooms</string>
+    <string name="people_capacity">People Capacity</string>
+    <string name="phone_number">Phone Number</string>
+    <string-array name="userTypes">
+        <item>User</item>
+        <item>Hosteler</item>
+    </string-array>
+</resources>
