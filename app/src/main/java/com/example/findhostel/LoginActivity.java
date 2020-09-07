@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
+    private MediaPlayer mp;
     private static final String TAG = "Login Activity";
     private EditText emailField;
     private EditText passwordField;
@@ -37,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         fb = FirebaseFirestore.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        mp = MediaPlayer.create(this, R.raw.sample);
         if(currentUser!=null){
             Query query = fb.collection("users").whereEqualTo("email",currentUser.getEmail());
             query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -61,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 if (emailField.getText().toString().trim().equals("")) {
                     emailField.setError("Field Required");
                 }

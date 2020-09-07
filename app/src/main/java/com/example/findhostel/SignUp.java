@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +42,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     private Spinner userType;
     private String selectedUserType;
     private boolean allOK;
+    private MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         cpasswordField = findViewById(R.id.inputConfirmPassword);
         signupBtn = findViewById(R.id.btnRegister);
         userType = findViewById(R.id.spinner1);
+        mp = MediaPlayer.create(this,R.raw.sample);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, new String[]{"User","Hosteler"});
         userType.setAdapter(adapter);
         userType.setOnItemSelectedListener(this);
@@ -59,6 +62,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         signupBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mp.start();
                     allOK = true;
                     final String email = emailField.getText().toString().trim();
                     final String password = passwordField.getText().toString().trim();
