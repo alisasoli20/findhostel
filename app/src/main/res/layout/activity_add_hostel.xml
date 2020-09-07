@@ -16,13 +16,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="12dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD HOSTEL"
+                android:layout_gravity="center"
+                android:fontFamily="@font/calligraffitti"
+                android:textSize="26sp"
+                android:gravity="center"
+                android:layout_marginTop="12dp"/>
             <EditText
                 android:id="@+id/inputHostelName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:fontFamily="@font/calligraffitti"
                 android:layout_marginLeft="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
@@ -42,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
+                android:fontFamily="@font/calligraffitti"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
@@ -66,6 +81,7 @@
                 android:background="@drawable/round_border"
                 android:drawableStart="@drawable/ic_group"
                 android:drawableLeft="@drawable/ic_lock"
+                android:fontFamily="@font/calligraffitti"
                 android:drawablePadding="16dp"
                 android:ems="10"
                 android:hint="@string/number_of_rooms"
@@ -82,6 +98,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:background="@drawable/round_border"
+                android:fontFamily="@font/calligraffitti"
                 android:drawableStart="@drawable/ic_rent"
                 android:drawableLeft="@drawable/ic_rent"
                 android:drawablePadding="16dp"
@@ -102,6 +119,7 @@
                 android:background="@drawable/round_border"
                 android:drawableStart="@drawable/ic_capacity"
                 android:drawableLeft="@drawable/ic_capacity"
+                android:fontFamily="@font/calligraffitti"
                 android:drawablePadding="16dp"
                 android:ems="10"
                 android:hint="@string/people_capacity"
@@ -117,6 +135,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
+                android:fontFamily="@font/calligraffitti"
                 android:background="@drawable/round_border"
                 android:drawableStart="@drawable/ic_phone"
                 android:drawableLeft="@drawable/ic_phone"
@@ -179,6 +198,9 @@
                 android:text="@string/addHostel"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/calligraffitti"
                 android:textStyle="bold" />
 
         </LinearLayout>

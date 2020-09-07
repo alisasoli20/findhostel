@@ -23,7 +23,9 @@
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:textSize="20sp"
-            android:id="@+id/myTitle"/>
+            android:fontFamily="@font/calligraffitti"
+            android:id="@+id/myTitle"
+            />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="Phone: "
                 android:textColor="#303b32"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:id="@+id/phoneTitle"/>
@@ -44,6 +47,7 @@
                 android:textColor="#303b32"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:id="@+id/phoneNumber"/>
         </LinearLayout>
         <LinearLayout
@@ -58,12 +62,14 @@
                 android:textColor="#303b32"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:id="@+id/typeTitle"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="#303b32"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:id="@+id/typeTitleField"/>
@@ -78,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:text="Building Type: "
                 android:textColor="#303b32"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:id="@+id/buildingTypeTitle"/>
@@ -88,6 +95,7 @@
                 android:textColor="#303b32"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:id="@+id/buildingTypeTitleField"/>
         </LinearLayout>
     </LinearLayout>

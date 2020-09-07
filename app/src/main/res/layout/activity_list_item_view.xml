@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="Hostel Name: "
                 android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/calligraffitti"
                 android:textStyle="bold"
                 android:textSize="20sp" />
 
@@ -35,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kjhkjhkh"
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -49,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hostel Type: "
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -58,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kjhkjhkh"
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -72,6 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hostel Address: "
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -83,6 +88,7 @@
                 android:text="kjhkjhkh"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
@@ -95,6 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rent Per Person: "
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -104,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kjhkjhkh"
+                android:fontFamily="@font/calligraffitti"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -120,6 +128,7 @@
                 android:text="Number of Rooms: "
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="20sp" />
 
             <TextView
@@ -129,6 +138,7 @@
                 android:text="kjhkjhkh"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
@@ -143,6 +153,7 @@
                 android:text="Hostel Building Type: "
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="20sp" />
 
             <TextView
@@ -152,6 +163,7 @@
                 android:text="kjhkjhkh"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
+                android:fontFamily="@font/calligraffitti"
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
@@ -174,6 +186,7 @@
                 android:padding="3dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:fontFamily="@font/calligraffitti"
                 ></Button>
         </LinearLayout>
 
