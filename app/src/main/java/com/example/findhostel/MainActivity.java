@@ -4,11 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,95 +29,38 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private EditText emailField;
-    private EditText passwordField;
-    private Button loginBtn;
-    private TextView gotoRegister;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore fb;
+    private  static int SPLASH_SCREEN = 4000;
+    Animation topAnim,bottomAnim;
+    ImageView image;
+    TextView logo,slogan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        mAuth = FirebaseAuth.getInstance();
-        fb = FirebaseFirestore.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null){
-            Query query = fb.collection("users").whereEqualTo("email",currentUser.getEmail());
-            query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    for (DocumentSnapshot mydoc :
-                            task.getResult().getDocuments()) {
-                        if(mydoc.get("userType").equals("User")){
-                            startActivity(new Intent(MainActivity.this,User_dashboard.class));
-                        }
-                        else{
-                            startActivity(new Intent(MainActivity.this,HomePage.class));
-                        }
-                    }
-                }
-            });
-        }
-        emailField = findViewById(R.id.inputEmail);
-        passwordField = findViewById(R.id.inputPassword);
-        loginBtn = findViewById(R.id.btnLogin);
-        gotoRegister = findViewById(R.id.gotoRegister);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+
+        //Animations
+        topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+
+        topAnim.setDuration(2000);
+        bottomAnim.setDuration(1500);
+
+        image = findViewById(R.id.imageView);
+        logo = findViewById(R.id.textView);
+        slogan = findViewById(R.id.textView2);
+
+        image.setAnimation(topAnim);
+        logo.setAnimation(bottomAnim);
+        slogan.setAnimation(bottomAnim);
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                if (emailField.getText().toString().trim().equals("")) {
-                    emailField.setError("Field Required");
-                }
-                if (passwordField.getText().toString().trim().equals("")) {
-                    passwordField.setError("Field Required");
-                }
-                if(!emailField.getText().toString().trim().equals("") && !passwordField.getText().toString().trim().equals("")) {
-                String email = emailField.getText().toString().trim();
-                String password = passwordField.getText().toString().trim();
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            final FirebaseUser user = mAuth.getCurrentUser();
-                            Query query = fb.collection("users").whereEqualTo("email",user.getEmail());
-                            query.get().addOnCompleteListener(MainActivity.this, new OnCompleteListener<QuerySnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                    for (DocumentSnapshot mydoc :task.getResult().getDocuments()) {
-                                        if(mydoc.get("userType").equals("User")){
-                                            Intent userIntent = new Intent(MainActivity.this,User_dashboard.class);
-                                            startActivity(userIntent);
-                                        }
-                                        else{
-                                            Intent hostelerIntent = new Intent(MainActivity.this,HomePage.class);
-                                            startActivity(hostelerIntent);
-                                        }
-                                    }
-                                }
-                            });
-                            //Intent homeIntent = new Intent(getApplicationContext(), HomePage.class);
-                            //startActivity(homeIntent);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
-            }
-        });
-        gotoRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent signUpIntent = new Intent(MainActivity.this,SignUp.class);
-                startActivity(signUpIntent);
-            }
-        });
+        },SPLASH_SCREEN);
     }
 
 }
