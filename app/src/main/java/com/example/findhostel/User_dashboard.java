@@ -33,7 +33,7 @@ public class User_dashboard extends AppCompatActivity {
             public void onClick(View view) {
                 mp.start();
                 mAuth.signOut();
-                startActivity(new Intent(User_dashboard.this,MainActivity.class));
+                startActivity(new Intent(User_dashboard.this,LoginActivity.class));
             }
         });
         showHostelsView.setOnClickListener(new View.OnClickListener() {

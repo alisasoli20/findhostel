@@ -30,7 +30,7 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View view) {
                 mp.start();
                 mAuth.signOut();
-                startActivity(new Intent(HomePage.this,MainActivity.class));
+                startActivity(new Intent(HomePage.this,LoginActivity.class));
             }
         });
         showHostelsView.setOnClickListener(new View.OnClickListener() {
